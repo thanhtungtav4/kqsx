@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLotteryResultsTable extends Migration
+class CreateLotteryResultsNorthTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateLotteryResultsTable extends Migration
      */
     public function up()
     {
-        Schema::create('lottery_results', function (Blueprint $table) {
+        Schema::create('lottery_results_north', function (Blueprint $table) {
             $table->id();
-            $table->integer('province_id');
-            $table->date('lottery_date');
-            $table->text('lottery_data');
             $table->timestamps();
         });
     }
@@ -29,6 +26,6 @@ class CreateLotteryResultsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lottery_results');
+        Schema::dropIfExists('lottery_results_north');
     }
 }
